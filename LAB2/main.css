@@ -1,0 +1,46 @@
+h1{
+    font-family: 'Amatic SC', cursive;
+    font-size: 70px;
+}
+
+#Gradiant{
+    width: 500px; height: 540px;
+    background:linear-gradient(145deg, rgb(129, 145, 235) 17%,
+    rgb(231, 116, 193) 52%, rgb(236, 108, 114) 77%);
+}
+
+#boss{
+    width: 200px;
+    height: 50px;
+}
+
+div{
+    border: 4px;
+    border-color: black;
+    
+    border-style:solid;
+    border-left-style: none;
+    border-right-style: none;
+    margin: 10px;
+
+}
+
+div p{
+    font-family: 'Hi Melody', cursive;
+    font-size: 20px;
+}
+
+span a{
+    color:skyblue;
+    font-family: 'Nanum Pen Script', cursive;
+    width: 40px;
+    text-decoration: none;
+    text-align: center;
+    background-color: blueviolet;
+    border-color:red;
+    border-style:dashed;
+    font-size: 30px;
+    padding: 5px;
+    border-width: medium;
+    margin: 10px;
+}
