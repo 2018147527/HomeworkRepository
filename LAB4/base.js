@@ -10,12 +10,15 @@ fetch('product.json')
         first(product_list);
     })
 
+window.onscroll = () => {
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight)
+        { first(product_list);}
+}
 
 function first(product_list){
     const category = document.querySelector('#category');
     const searchTerm = document.querySelector('#searchTerm');
     const searchBtn = document.querySelector('button');
-//const main = document.querySelector('aside');
     var pnum = 0;
     const total =product_list.length;
     var categoryGroup = [];
@@ -25,10 +28,7 @@ function first(product_list){
     finalGroup = [];
 
 
-window.onscroll = () => {
-    if (window.innerHeight + window.scrollY >= document.body.offsetHeight)
-        {  }
-}
+
 
 searchBtn.onclick = selectCategory;
 
@@ -70,7 +70,7 @@ function updateDisplay(){
     }
     if(finalGroup.length == 0){
         var para = document.createElement('div');
-        para.textContent = "No result";
+        para.textContent = "해당 검색 결과가 없습니다.";
         document.getElementById("k").appendChild(para);
     }
     else{
