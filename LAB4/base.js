@@ -80,7 +80,7 @@ function updateDisplay(){
     }
 }
 
-function Storing(){
+function Storing(product_list){
     let url = './' + product_list.image;
     fetch(url).then(function(response) {
         return response.blob();
