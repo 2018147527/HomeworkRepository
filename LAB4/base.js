@@ -43,7 +43,7 @@ function selectCategory(e){
         let lowerCaseType = category.value.toLowerCase();
         for(let i = 0; i < total ; i++){
             if(product_list[i].type == lowerCaseType){
-                categoryGroup.push(k[i]);
+                categoryGroup.push(product_list[i]);
             }
         }
     }
