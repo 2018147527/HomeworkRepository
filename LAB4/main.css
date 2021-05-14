@@ -65,8 +65,12 @@ div p{
 }
 
 #Section>aside>div>img{
-    width: 100px;
-    height: 100px;
+    width: 94%;
+    height: 150px;
+    bottom: 0px;
+}
+#Section>aside>div>p{
+    width: 40%;
 }
 
 #searching{

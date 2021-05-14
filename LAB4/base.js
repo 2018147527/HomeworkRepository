@@ -97,6 +97,8 @@ function showProduct(objectURL, product) {
     const heading = document.createElement('h2');
     const pp = document.createElement('p');
     const image = document.createElement('img');
+    const button = document.createElement('btn');
+    button.textContent= "자세히";
 
     
     divs.setAttribute('class', product.type);
@@ -109,9 +111,13 @@ function showProduct(objectURL, product) {
 
    
     document.getElementById("k").appendChild(divs);
-    divs.appendChild(heading);
-    divs.appendChild(pp);
+    function moreinfo() {
+        divs.appendChild(heading);
+        divs.appendChild(pp);
+    }
     divs.appendChild(image);
+    divs.appendChild(button);
+    button.onclick = moreinfo;
 }
 
 
