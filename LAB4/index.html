@@ -23,48 +23,33 @@
             <span><a href="./login.html"> 로그인 </a></span>
         </nav>
         <div id="Section">
+            <form>
+                <div id="searching">
+                    <label for="category">Choose a category:</label>
+                    <select id="category">
+                      <option selected>All</option>
+                      <option>Vegetables</option>
+                      <option>Meat</option>
+                      <option>Soup</option>
+                    </select>
+                </div>
+                <div id="searching">
+                    <label for="searchTerm">Enter search term:</label>
+                    <input type="text" id="searchTerm" placeholder="e.g. beans">
+                </div>
+                <div>
+                    <button>Filter results</button>
+                  </div>
+            </form>
             <aside id = "k">
-                <div>
-                    <img src="./Nintendo.jfif" >
-                </div>
-                <div>
-                    <img src="./Ps5.jfif">
-                </div>
-                <div></div>
-                <div></div>
+                
             </aside>    
         </div>
 
         <div>
             
         </div>
-        <script>
-            
-            var pnum = 0;
-            const total =12;
-            window.onscroll = () => {
-                if (window.innerHeight + window.scrollY >= document.body.offsetHeight)
-                { moreproduct(); }
-            }
-            function moreproduct(){
-                fetch('product.json')
-                .then(function(response){
-                    return response.json();
-                }).then(function(json){                  
-                  console.log(json)
-                  
-                    //  if(pnum < total){
-                  //      var para = document.createElement('div');
-                  //      para.textContent = json[pnum].title;
-                  //      document.getElementById("k").appendChild(para);
-                  //      pnum = pnum+1;
-                  //      para.textContent = json[pnum].title;
-                  //      document.getElementById("k").appendChild(para);
-                  //      pnum = pnum+1;
-                  //  }
-                })
-            }
-        </script>
+        <script src="base.js"></script>
 
     </body>
 

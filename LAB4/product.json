@@ -1,13 +1,74 @@
 [
-    { "product": "Nintendo" },
-    
-    { "product": "PS5"} ,
-
-     {"product": "333"},
-
-    {"product": "444"},
-
-    {"product": "555" },
-
-    {"product": "666" } 
-]
+    {
+      "name" : "nintendo",
+      "price" : 350000,
+      "image" : "nintendo.jpg",
+      "type" : "console"
+    },
+    {
+      "name" : "ps5",
+      "price" : 500000,
+      "image" : "ps5.jpg",
+      "type" : "console"
+    },
+    {
+      "name" : "xbox",
+      "price" : 400000,
+      "image" : "xbox.jpg",
+      "type" : "console"
+    },
+    {
+      "name" : "retro console",
+      "price" : 150000,
+      "image" : "retro_console.jpg",
+      "type" : "console"
+    },
+    {
+      "name" : "black keyboard",
+      "price" : 50000,
+      "image" : "black_keyboard.jpg",
+      "type" : "keyboard"
+    },
+    {
+      "name" : "red keyboard",
+      "price" : 120000,
+      "image" : "red_keyboard.jpg",
+      "type" : "keyboard"
+    },
+    {
+      "name" : "white keyboard",
+      "price" : 70000,
+      "image" : "white_keyboard.jpg",
+      "type" : "keyboard"
+    },
+    {
+      "name" : "yellow keyboard",
+      "price" : 100000,
+      "image" : "yellow_keyboard.jpg",
+      "type" : "keyboard"
+    },
+    {
+      "name" : "animal crossing game",
+      "price" : 69000,
+      "image" : "animal_crossing_game.jpg",
+      "type" : "game"
+    },
+    {
+      "name" : "zelda game",
+      "price" : 74000,
+      "image" : "zelda_game.jpg",
+      "type" : "game"
+    },
+    {
+      "name" : "fifa21",
+      "price" : 49000,
+      "image" : "fifa21_game.jpg",
+      "type" : "game"
+    },
+    {
+      "name" : "pocket volleyball",
+      "price" : 1500,
+      "image" : "pika_volleyball_game.jpg",
+      "type" : "game"
+    }
+  ]
