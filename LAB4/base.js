@@ -1,24 +1,30 @@
 
 
-const category = document.querySelector('#category');
-const searchTerm = document.querySelector('#searchTerm');
-const searchBtn = document.querySelector('button');
-//const main = document.querySelector('aside');
+
 
 fetch('product.json')
     .then(function(response){
          return response.json();
     }).then(function(json){                  
         let product_list = json;
-        selectCategory;
+        first(product_list);
     })
 
 
+function first(product_list){
+    const category = document.querySelector('#category');
+    const searchTerm = document.querySelector('#searchTerm');
+    const searchBtn = document.querySelector('button');
+//const main = document.querySelector('aside');
+    var pnum = 0;
+    const total =product_list.length;
+    var categoryGroup = [];
+    var finalGroup = [];
+    finalGroup = product_list
+    updateDisplay();
+    finalGroup = [];
 
-var pnum = 0;
-const total =product_list.length;
-var categoryGroup = []
-var finalGroup = []
+
 window.onscroll = () => {
     if (window.innerHeight + window.scrollY >= document.body.offsetHeight)
         {  }
@@ -28,8 +34,8 @@ searchBtn.onclick = selectCategory;
 
 function selectCategory(e){
     e.preventDefault();
-    categoryGroup = []
-    finalGroup = []
+    categoryGroup = [];
+    finalGroup = [];
     if(category.value === 'All') {
         categoryGroup = product_list;
     }
@@ -110,5 +116,5 @@ function showProduct(objectURL, product) {
 
 
 
-
+}
 
