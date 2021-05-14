@@ -22,6 +22,17 @@ function first(product_list){
     var categoryGroup = [];
     var finalGroup = [];
     finalGroup = product_list;
+    window.onscroll = () => {
+        if (window.innerHeight + window.scrollY >= document.body.offsetHeight && firstflag == true)
+            { 
+                for(let i = 6; i < finalGroup.length; i++) {
+                    Storing(finalGroup[i]);
+                    
+                }
+                firstflag =false;
+    
+            }
+    }
     updateDisplay();
     finalGroup = [];
 
@@ -29,17 +40,7 @@ function first(product_list){
 
 
 searchBtn.onclick = selectCategory;
-window.onscroll = () => {
-    if (window.innerHeight + window.scrollY >= document.body.offsetHeight && firstflag == true)
-        { 
-            for(let i = 6; i < finalGroup.length; i++) {
-                Storing(finalGroup[i]);
-                
-            }
-            firstflag =false;
 
-        }
-}
 
 function selectCategory(e){
     e.preventDefault();
@@ -90,7 +91,18 @@ function updateDisplay(){
         }
         else{ 
             for(let i = 0; i < 6; i++) {
-            Storing(finalGroup[i]);
+            Storing(finalGroup[i]);            
+            }
+            window.onscroll = () => {
+                if (window.innerHeight + window.scrollY >= document.body.offsetHeight && firstflag == true)
+                    { 
+                        for(let i = 6; i < finalGroup.length; i++) {
+                            Storing(finalGroup[i]);
+                            
+                        }
+                        firstflag =false;
+            
+                    }
             }
         }
     }
