@@ -102,7 +102,7 @@ function showProduct(objectURL, product) {
     divs.setAttribute('class', product.type);
 
     
-    heading.textContent = product.name.replace(product.name.charAt(0), product.name.charAt(0).toUpperCase());
+    heading.textContent = product.name
     pp.textContent = product.price +"원"
     image.src = objectURL;
     image.alt = product.name;
