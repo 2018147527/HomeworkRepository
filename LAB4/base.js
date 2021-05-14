@@ -11,16 +11,7 @@ fetch('product.json')
     })
 var pnum = 0;
 var firstflag = true;
-window.onscroll = () => {
-    if (window.innerHeight + window.scrollY >= document.body.offsetHeight)
-        { fetch('product.json')
-        .then(function(response){
-             return response.json();
-        }).then(function(json){                  
-            let product_list = json;
-            first(product_list);
-        });}
-}
+
 
 function first(product_list){
     const category = document.querySelector('#category');
@@ -29,7 +20,7 @@ function first(product_list){
     const total =product_list.length;
     var categoryGroup = [];
     var finalGroup = [];
-    finalGroup = product_list
+    finalGroup = product_list;
     updateDisplay();
     finalGroup = [];
 
@@ -73,7 +64,7 @@ function selectProducts(){
 
 function updateDisplay(){
     while(document.getElementById("k").firstChild){
-        document.getElementById("k").removeChild(document.getElementById("k").firstChild)
+        document.getElementById("k").removeChild(document.getElementById("k").firstChild);
     }
     if(finalGroup.length == 0){
         var para = document.createElement('div');
@@ -97,9 +88,9 @@ function load(){
     window.onscroll = () => {
         if (window.innerHeight + window.scrollY >= document.body.offsetHeight)
             { 
-                for(let i = 6; i < finalGroup.length; i++ && firstflag == true) {
+                for(let i = 6; i < finalGroup.length; i++) {
                     Storing(finalGroup[i]);
-                    firstflag = false;
+                    
                 }
 
             }
@@ -130,8 +121,8 @@ function showProduct(objectURL, product) {
     divs.setAttribute('class', product.type);
 
     
-    heading.textContent = product.name
-    pp.textContent = product.price +"원"
+    heading.textContent = product.name;
+    pp.textContent = product.price +"원";
     image.src = objectURL;
     image.alt = product.name;
 
