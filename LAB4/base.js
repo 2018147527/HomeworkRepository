@@ -11,6 +11,17 @@ fetch('product.json')
     })
 var pnum = 0;
 
+window.onscroll = () => {
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight && firstflag == true)
+        { 
+            for(let i = 6; i < finalGroup.length; i++) {
+                Storing(finalGroup[i]);
+                
+            }
+            firstflag =false;
+
+        }
+}
 
 
 function first(product_list){
@@ -22,17 +33,6 @@ function first(product_list){
     var categoryGroup = [];
     var finalGroup = [];
     finalGroup = product_list;
-    window.onscroll = () => {
-        if (window.innerHeight + window.scrollY >= document.body.offsetHeight && firstflag == true)
-            { 
-                for(let i = 6; i < finalGroup.length; i++) {
-                    Storing(finalGroup[i]);
-                    
-                }
-                firstflag =false;
-    
-            }
-    }
     updateDisplay();
     finalGroup = [];
 
