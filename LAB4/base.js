@@ -12,7 +12,13 @@ fetch('product.json')
 
 window.onscroll = () => {
     if (window.innerHeight + window.scrollY >= document.body.offsetHeight)
-        { first(product_list);}
+        { fetch('product.json')
+        .then(function(response){
+             return response.json();
+        }).then(function(json){                  
+            let product_list = json;
+            first(product_list);
+        });}
 }
 
 function first(product_list){
@@ -31,6 +37,7 @@ function first(product_list){
 
 
 searchBtn.onclick = selectCategory;
+
 
 function selectCategory(e){
     e.preventDefault();
@@ -74,9 +81,26 @@ function updateDisplay(){
         document.getElementById("k").appendChild(para);
     }
     else{
-        for(let i = 0; i < finalGroup.length; i++) {
-            Storing(finalGroup[i]);
+        if(finalGroup.length<=6){
+            for(let i = 0; i < finalGroup.length; i++) {
+                Storing(finalGroup[i]);
+            }
         }
+        else{ load();}
+    }
+}
+function load(){
+    for(let i = 0; i < 6; i++) {
+        Storing(finalGroup[i]);
+    }
+    pnum=6;
+    window.onscroll = () => {
+        if (window.innerHeight + window.scrollY >= document.body.offsetHeight)
+            { 
+                for(let i = pnum; i < finalGroup.length; i++) {
+                    Storing(finalGroup[i]);
+                }
+            }
     }
 }
 
