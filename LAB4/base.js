@@ -10,6 +10,7 @@ fetch('product.json')
         first(product_list);
     })
 var pnum = 0;
+var firstflag = true;
 window.onscroll = () => {
     if (window.innerHeight + window.scrollY >= document.body.offsetHeight)
         { fetch('product.json')
@@ -96,8 +97,9 @@ function load(){
     window.onscroll = () => {
         if (window.innerHeight + window.scrollY >= document.body.offsetHeight)
             { 
-                for(let i = 6; i < finalGroup.length; i++) {
+                for(let i = 6; i < finalGroup.length; i++ && firstflag == true) {
                     Storing(finalGroup[i]);
+                    firstflag = false;
                 }
 
             }
