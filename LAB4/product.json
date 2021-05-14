@@ -70,5 +70,30 @@
       "price" : 1500,
       "image" : "pika_volleyball_game.jpg",
       "type" : "game"
+    },
+    {
+      "name" : "red mouse",
+      "price" : 55000,
+      "image" : "red_mouse.jpg",
+      "type" : "mouse"
+    },
+    {
+      "name" : "white mouse",
+      "price" : 12000,
+      "image" : "white_mouse.jpg",
+      "type" : "mouse"
+    },
+    {
+      "name" : "purple mouse",
+      "price" : 40000,
+      "image" : "purple_mouse.jpg",
+      "type" : "mouse"
+    },
+    {
+      "name" : "gun mouse",
+      "price" : 150000,
+      "image" : "gun_mouse.jpg",
+      "type" : "mouse"
     }
+    
   ]
