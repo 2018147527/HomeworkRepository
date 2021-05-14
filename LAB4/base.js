@@ -9,7 +9,7 @@ fetch('product.json')
         let product_list = json;
         first(product_list);
     })
-
+var pnum = 0;
 window.onscroll = () => {
     if (window.innerHeight + window.scrollY >= document.body.offsetHeight)
         { fetch('product.json')
@@ -25,7 +25,6 @@ function first(product_list){
     const category = document.querySelector('#category');
     const searchTerm = document.querySelector('#searchTerm');
     const searchBtn = document.querySelector('button');
-    var pnum = 0;
     const total =product_list.length;
     var categoryGroup = [];
     var finalGroup = [];
@@ -97,9 +96,10 @@ function load(){
     window.onscroll = () => {
         if (window.innerHeight + window.scrollY >= document.body.offsetHeight)
             { 
-                for(let i = pnum; i < finalGroup.length; i++) {
+                for(let i = 6; i < finalGroup.length; i++) {
                     Storing(finalGroup[i]);
                 }
+
             }
     }
 }
