@@ -10,9 +10,10 @@ fetch('product.json')
         first(product_list);
     })
 var pnum = 0;
+var firstflag = true;
 
 window.onscroll = () => {
-    if (window.innerHeight + window.scrollY >= document.body.offsetHeight && firstflag == true)
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight && firstflag == true)
         { 
             for(let i = 6; i < finalGroup.length; i++) {
                 Storing(finalGroup[i]);
@@ -29,7 +30,6 @@ function first(product_list){
     const searchTerm = document.querySelector('#searchTerm');
     const searchBtn = document.querySelector('button');
     const total =product_list.length;
-    var firstflag = true;
     var categoryGroup = [];
     var finalGroup = [];
     finalGroup = product_list;
