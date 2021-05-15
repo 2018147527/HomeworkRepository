@@ -11,18 +11,18 @@ fetch('product.json')
     })
 var pnum = 0;
 var firstflag = true;
-var isExecuted = false;
+var isCall = false;
 
 
 function first(product_list){
     const category = document.querySelector('#category');
-    const searchTerm = document.querySelector('#searchTerm');
+    const searchTerm = document.querySelector('#searchT');
     const searchBtn = document.querySelector('button');
     const total =product_list.length;
-    let categoryGroup = [];
-    let finalGroup = [];
-    finalGroup = product_list;
-    updateDisplay();
+    let cGroup = [];
+    let fGroup = [];
+    fGroup = product_list;
+    update();
 
 
 
@@ -30,9 +30,9 @@ window.onscroll = infiniteScroll;
 searchBtn.onclick = selectCategory;
 
 function infiniteScroll(){
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight && !isExecuted){
-        isExecuted = true;
-        if(finalGroup.length>6 && firstflag){
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight && !isCall){
+        isCall = true;
+        if(fGroup.length>6 && firstflag){
             for(let i = 0; i < first_product_list.length; i++) {
                 Storing(first_product_list[i]);
             }
@@ -42,7 +42,7 @@ function infiniteScroll(){
             pnum = pnum + 1
         }
         setTimeout(() => {
-            isExecuted = false;
+            isCall = false;
         }, 1000);
     }
 }
@@ -50,10 +50,10 @@ function infiniteScroll(){
 
 function selectCategory(e){
     e.preventDefault();
-    categoryGroup = [];
-    finalGroup = [];
+    cGroup = [];
+    fGroup = [];
     if(category.value === 'All') {
-        categoryGroup = product_list;
+        cGroup = product_list;
         pnum = 0;
         firstflag = true;
     }
@@ -61,39 +61,39 @@ function selectCategory(e){
         let lowerCaseType = category.value.toLowerCase();
         for(let i = 0; i < total ; i++){
             if(product_list[i].type == lowerCaseType){
-                categoryGroup.push(product_list[i]);
+                cGroup.push(product_list[i]);
             }
         }
     }
-    selectProducts();
+    searchProduct();
 }
 
-function selectProducts(){
+function searchProduct(){
     if(searchTerm.value.trim() === '') {
-        finalGroup = categoryGroup;
+        fGroup = cGroup;
     } else {
       let lowerCaseSearchTerm = searchTerm.value.trim().toLowerCase();
-      for(let i = 0; i < categoryGroup.length ; i++) {
-        if(categoryGroup[i].name.indexOf(lowerCaseSearchTerm) !== -1) {
-           finalGroup.push(categoryGroup[i]);        
+      for(let i = 0; i < cGroup.length ; i++) {
+        if(cGroup[i].name.indexOf(lowerCaseSearchTerm) !== -1) {
+           fGroup.push(cGroup[i]);        
             }
         }
     }
-    updateDisplay();
+    update();
 }
 
-function updateDisplay(){
+function update(){
     while(document.getElementById("k").firstChild){
         document.getElementById("k").removeChild(document.getElementById("k").firstChild);
     }
-    if(finalGroup.length == 0){
+    if(fGroup.length == 0){
         var para = document.createElement('div');
         para.textContent = "해당 검색 결과가 없습니다.";
         document.getElementById("k").appendChild(para);
     }
     else{
-        for(let i = 0; i < finalGroup.length; i++) {
-            Storing(finalGroup[i]);
+        for(let i = 0; i < fGroup.length; i++) {
+            Storing(fGroup[i]);
         }
         
     }
