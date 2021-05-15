@@ -54,6 +54,8 @@ function selectCategory(e){
     finalGroup = [];
     if(category.value === 'All') {
         categoryGroup = product_list;
+        pnum = 0;
+        firstflag = true;
     }
     else{
         let lowerCaseType = category.value.toLowerCase();
