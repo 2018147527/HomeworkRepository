@@ -31,7 +31,7 @@ searchBtn.onclick = selectCategory;
 
 function infiniteScroll(){
     let kheight = document.getElementById("k");
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight + offsetHeight && !isCall){
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight + kheight.offsetHeight && !isCall){
         isCall = true;
         if(fGroup.length>6 && firstflag){
             for(let i = 0; i < first_product_list.length; i++) {
