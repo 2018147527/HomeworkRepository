@@ -6,7 +6,7 @@ fetch('product.json')
     .then(function(response){
          return response.json();
     }).then(function(json){                  
-        let product_list = json;
+        var product_list = json;
         first(product_list);
     })
 var pnum = 0;
@@ -14,13 +14,9 @@ var firstflag = true;
 
 window.onscroll = () => {
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight)
-        { fetch('product.json')
-        .then(function(response){
-             return response.json();
-        }).then(function(json){                  
-            let product_list = json;
-            first(product_list);
-        })      
+        { for(let i = 0; i < product_list.length; i++) {
+            first.Storing(product_list[i]);
+        }
     }
 }
 
