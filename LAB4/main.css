@@ -62,7 +62,7 @@ div p{
     margin-left: -500px;
 }
 
-#Section>div>aside>div{
+#Section>aside>div{
     text-align: left;
     margin: 15px;
     float: left; 
@@ -73,34 +73,33 @@ div p{
     border-color: black;
 }
 
-#Section>div>aside>div>img{
+#Section>aside>div>img{
     width: 98%;
     height: 150px;
     bottom: 0px;
 }
-#Section>div>aside>div>p{
+#Section>aside>div>p{
     width: 40%;
 }
 
 #searching{
-
-    width:99%
-}
-form{
-    width: 25%;
-    margin: 0px;
-}
-
-#Section>div{
-    width: 75%;
-    float: right;
+    width:25%;
+    display: flex;
+    flex-flow: column;
+    align-items: stretch;
     position: relative;
 }
-aside {
+#searching>form>div{
     width: 95%;
-    height: 95%;
-    padding-left: 5px;
-    margin-left: 5px;
+    margin-top: 12px;
+}
+
+
+aside {
+    width: 70%;
+    display: flex;
+    padding-left: 1px;
+    margin-left: 1px;
     float: right;
     font-style: italic;
     border-left-color: black;
