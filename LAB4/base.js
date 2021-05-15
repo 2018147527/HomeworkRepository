@@ -20,8 +20,8 @@ function first(product_list){
     const searchTerm = document.querySelector('#searchTerm');
     const searchBtn = document.querySelector('button');
     const total =product_list.length;
-    var categoryGroup = [];
-    var finalGroup = [];
+    let categoryGroup = [];
+    let finalGroup = [];
     finalGroup = product_list;
     updateDisplay();
     finalGroup = [];
@@ -154,12 +154,18 @@ window.onscroll = () => {
 
 window.onscroll = () => {
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight && firstflag == true)
-        { 
-            for(let i = 6; i < finalGroup.length; i++) {
-                Storing(finalGroup[i]);
-                
-            }
-            firstflag =false;
+        { fetch('product.json')
+        .then(function(response){
+             return response.json();
+        }).then(function(json){                  
+            let product_list = json;
+            first(product_list);
+        })
+        for(let i = 6; i < product_list.finalGroup.length; i++) {
+            Storing(product_list.finalGroup[i]);
+            
+        }
+        firstflag =false;
 
         }
 }
