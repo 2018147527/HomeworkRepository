@@ -62,7 +62,7 @@ div p{
     margin-left: -500px;
 }
 
-#Section>aside>div{
+#Section>main>div{
     text-align: left;
     margin: 15px;
     float: left; 
@@ -73,17 +73,18 @@ div p{
     border-color: black;
 }
 
-#Section>aside>div>img{
+#Section>main>div>img{
     width: 98%;
     height: 150px;
     bottom: 0px;
 }
-#Section>aside>div>p{
+#Section>main>div>p{
     width: 40%;
 }
 
 #searching{
     width:25%;
+    height: 98%;
     display: flex;
     flex-flow: column;
     align-items: stretch;
@@ -95,11 +96,12 @@ div p{
 }
 
 
-aside {
+main {
     width: 70%;
     padding-left: 1px;
     margin-left: 1px;
     float: right;
+    position: relative;
     font-style: italic;
     border-left-color: black;
   }
