@@ -70,7 +70,7 @@ h1{
     font-style: italic;
     border-left-color: black;
   }
-  
+
 #Section>div>div{
     text-align: left;
     margin: 15px;
@@ -132,5 +132,5 @@ span a{
     margin: 10px;
 }
 footer{
-    height: 100px;
+    height: 600px;
 }
