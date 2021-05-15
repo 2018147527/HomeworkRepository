@@ -33,10 +33,11 @@ searchBtn.onclick = selectCategory;
 function infiniteScroll(){
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight && !isExecuted){
         isExecuted = true;
-        if(finalGroup.length>6){
+        if(finalGroup.length>6 || firstflag){
             for(let i = 0; i < first_product_list.length; i++) {
                 Storing(first_product_list[i]);
             }
+            firstflag = false;
         }
         setTimeout(() => {
             isExecuted = false;
