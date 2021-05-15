@@ -11,14 +11,7 @@ fetch('product.json')
     })
 var pnum = 0;
 var firstflag = true;
-
-window.onscroll = () => {
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight)
-        { for(let i = 0; i < first_product_list.length; i++) {
-            first.Storing(first_product_list[i]);
-        }
-    }
-}
+var isExecuted = false;
 
 
 function first(product_list){
@@ -34,8 +27,20 @@ function first(product_list){
 
 
 
-
+window.onscroll = infiniteScroll;
 searchBtn.onclick = selectCategory;
+
+function infiniteScroll(){
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight && !isExecuted){
+        isExecuted = true;
+        for(let i = 0; i < first_product_list.length; i++) {
+            Storing(first_product_list[i]);
+        }
+        setTimeout(() => {
+            isExecuted = false;
+        }, 1000);
+    }
+}
 
 
 function selectCategory(e){
