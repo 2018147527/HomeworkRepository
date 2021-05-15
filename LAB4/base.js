@@ -12,17 +12,7 @@ fetch('product.json')
 var pnum = 0;
 var firstflag = true;
 
-window.onscroll = () => {
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight && firstflag == true)
-        { 
-            for(let i = 6; i < finalGroup.length; i++) {
-                Storing(finalGroup[i]);
-                
-            }
-            firstflag =false;
 
-        }
-}
 
 
 function first(product_list){
@@ -148,7 +138,29 @@ function showProduct(objectURL, product) {
     button.onclick = moreinfo;
 }
 
+window.onscroll = () => {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight && firstflag == true)
+        { 
+            for(let i = 6; i < finalGroup.length; i++) {
+                Storing(finalGroup[i]);
+                
+            }
+            firstflag =false;
 
+        }
+}
 
+}
+
+window.onscroll = () => {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight && firstflag == true)
+        { 
+            for(let i = 6; i < finalGroup.length; i++) {
+                Storing(finalGroup[i]);
+                
+            }
+            firstflag =false;
+
+        }
 }
 
