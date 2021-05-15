@@ -23,7 +23,6 @@ function first(product_list){
     let finalGroup = [];
     finalGroup = product_list;
     updateDisplay();
-    finalGroup = [];
 
 
 
