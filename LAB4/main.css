@@ -97,7 +97,6 @@ div p{
 
 aside {
     width: 70%;
-    display: flex;
     padding-left: 1px;
     margin-left: 1px;
     float: right;
@@ -128,4 +127,7 @@ span a{
     padding: 5px;
     border-width: medium;
     margin: 10px;
+}
+footer{
+    height: 100px;
 }
