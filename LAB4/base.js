@@ -12,7 +12,17 @@ fetch('product.json')
 var pnum = 0;
 var firstflag = true;
 
-
+window.onscroll = () => {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight)
+        { fetch('product.json')
+        .then(function(response){
+             return response.json();
+        }).then(function(json){                  
+            let product_list = json;
+            first(product_list);
+        })      
+    }
+}
 
 
 function first(product_list){
@@ -74,27 +84,10 @@ function updateDisplay(){
         document.getElementById("k").appendChild(para);
     }
     else{
-        if(firstflag == false){
-            for(let i = 0; i < finalGroup.length; i++) {
-                Storing(finalGroup[i]);
-            }
+        for(let i = 0; i < finalGroup.length; i++) {
+            Storing(finalGroup[i]);
         }
-        else{ 
-            for(let i = 0; i < 6; i++) {
-            Storing(finalGroup[i]);            
-            }
-            window.onscroll = () => {
-                if (window.innerHeight + window.scrollY >= document.body.offsetHeight && firstflag == true)
-                    { 
-                        for(let i = 6; i < finalGroup.length; i++) {
-                            Storing(finalGroup[i]);
-                            
-                        }
-                        firstflag =false;
-            
-                    }
-            }
-        }
+        
     }
 }
 
@@ -138,35 +131,8 @@ function showProduct(objectURL, product) {
     button.onclick = moreinfo;
 }
 
-window.onscroll = () => {
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight && firstflag == true)
-        { 
-            for(let i = 6; i < finalGroup.length; i++) {
-                Storing(finalGroup[i]);
-                
-            }
-            firstflag =false;
-
-        }
-}
 
 }
 
-window.onscroll = () => {
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight && firstflag == true)
-        { fetch('product.json')
-        .then(function(response){
-             return response.json();
-        }).then(function(json){                  
-            let product_list = json;
-            first(product_list);
-        })
-        for(let i = 6; i < product_list.finalGroup.length; i++) {
-            Storing(product_list.finalGroup[i]);
-            
-        }
-        firstflag =false;
 
-        }
-}
 
