@@ -56,7 +56,7 @@ div p{
     border-right-style: none;
     border-bottom-style: none;
     margin: 10px;
-    position: absolute;
+    position: relative;
     left: 50%;
     top: 30%;
     margin-left: -500px;
@@ -105,7 +105,7 @@ aside {
 nav{
     text-align: center;
     width: 1000px;
-    position: absolute;
+    position: relative;
     left: 50%;
     top: 15%;
     margin-left: -500px;
