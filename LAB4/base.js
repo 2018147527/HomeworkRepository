@@ -79,6 +79,7 @@ function searchProduct(){
            fGroup.push(cGroup[i]);        
             }
         }
+        firstflag = false;
     }
     update();
 }
