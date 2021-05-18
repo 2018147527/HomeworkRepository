@@ -16,8 +16,8 @@ var isCall = false;
 
 function first(product_list){
     const category = document.querySelector('#category');
-    const searchTerm = document.querySelector('#searchT');
-    const searchBtn = document.querySelector('button');
+    const Sword = document.querySelector('#searchT');
+    const Sbutton = document.querySelector('button');
     const total =product_list.length;
     let cGroup = [];
     let fGroup = [];
@@ -27,11 +27,11 @@ function first(product_list){
 
 
 window.onscroll = infiniteScroll;
-searchBtn.onclick = selectCategory;
+Sbutton.onclick = selectCategory;
 
 function infiniteScroll(){
     let kheight = document.getElementById("k");
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight + kheight.offsetHeight && !isCall){
+    if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight + kheight.offsetHeight -3) && !isCall){
         isCall = true;
         if(fGroup.length>6 && firstflag){
             for(let i = 0; i < first_product_list.length; i++) {
@@ -70,10 +70,10 @@ function selectCategory(e){
 }
 
 function searchProduct(){
-    if(searchTerm.value.trim() === '') {
+    if(Sword.value.trim() === '') {
         fGroup = cGroup;
     } else {
-      let lowerCaseSearchTerm = searchTerm.value.trim().toLowerCase();
+      let lowerCaseSearchTerm = Sword.value.trim().toLowerCase();
       for(let i = 0; i < cGroup.length ; i++) {
         if(cGroup[i].name.indexOf(lowerCaseSearchTerm) !== -1) {
            fGroup.push(cGroup[i]);        
